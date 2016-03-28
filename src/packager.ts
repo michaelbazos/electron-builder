@@ -70,7 +70,7 @@ export class Packager implements BuildInfo {
       for (let arch of normalizeArchs(platform, this.options.arch)) {
         await this.installAppDependencies(arch)
 
-        const outDir = path.join(this.projectDir, "dist")
+        const outDir = path.join(this.projectDir, "releases")
         // electron-packager uses productName in the directory name
         const appOutDir = path.join(outDir, helper.appName + "-" + platform + "-" + arch)
         await helper.pack(outDir, appOutDir, arch)
